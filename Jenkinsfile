@@ -1,7 +1,7 @@
 pipeline {
 	agent { label "slave2" }
 	stages {
-			stage("Build and test") {
+			stage("parallel") {
 				parallel {
 				stage("Build") {
 					steps {

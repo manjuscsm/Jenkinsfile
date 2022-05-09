@@ -8,7 +8,7 @@ pipeline {
 			
 		stage("Build") {
 		environment {
-		test = "stage_level"
+		branch = "production"
 		}
 			steps {
 				sh  '''
@@ -22,7 +22,6 @@ pipeline {
 				sh  '''
 						echo "STAGE 2: This is a test stage	$test"
 						sleep 5
-						echo "$branch"
 					'''
 			}
 		}

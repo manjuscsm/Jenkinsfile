@@ -10,7 +10,6 @@ pipeline {
 		environment {
 		test = "stage_level"
 		}
-
 			steps {
 				sh  '''
 						echo " STAGE 1: The build stage $test"
@@ -27,6 +26,14 @@ pipeline {
 			}
 		}
 		stage("Deploy") {
+		input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
 			steps {
 				sh  '''
 						echo "STAGE 3: This is a deploy stage $test"

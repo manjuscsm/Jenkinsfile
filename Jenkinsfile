@@ -27,7 +27,7 @@ pipeline {
 		}
 		stage("Deploy") {
 		when {
-				branch 'production*'
+				branch 'production'
 		}
 			steps {
 				sh  '''

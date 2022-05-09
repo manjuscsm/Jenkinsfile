@@ -14,6 +14,7 @@ pipeline {
 				sh  '''
 						echo " STAGE 1: The build stage $test"
 						sleep 5
+						exit 1
 					''' 
 			}
 		}

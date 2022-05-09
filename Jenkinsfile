@@ -12,9 +12,8 @@ pipeline {
 		environment {
 		branch = "production"
 		}
-			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 			steps {
-			
+				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 				sh  '''
 						echo " STAGE 1: The build stage $Deploy_Server"
 						sleep 5

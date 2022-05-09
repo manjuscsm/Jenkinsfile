@@ -13,10 +13,13 @@ pipeline {
 		branch = "production"
 		}
 			steps {
+			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 				sh  '''
 						echo " STAGE 1: The build stage $Deploy_Server"
 						sleep 5
+						exit1
 					''' 
+			}
 			}
 		}
 		stage("test") {

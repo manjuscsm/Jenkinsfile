@@ -18,6 +18,9 @@ pipeline {
 			}
 		}
 		stage("test") {
+		when {
+				branch 'production*'
+		}
 			steps {
 				sh  '''
 						echo "STAGE 2: This is a test stage	$test"
@@ -26,9 +29,6 @@ pipeline {
 			}
 		}
 		stage("Deploy") {
-		when {
-				branch 'production'
-		}
 			steps {
 				sh  '''
 						echo "STAGE 3: This is a deploy stage $test"

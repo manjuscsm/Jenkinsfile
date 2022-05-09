@@ -1,7 +1,7 @@
 pipeline {
 	agent { label "slave2" }
 	environment {
-		test = "pipeline_level"
+		branch = "production"
 	}		
 
 	stages {

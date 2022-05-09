@@ -27,6 +27,9 @@ pipeline {
 				sh  '''
 						echo "STAGE 2: This is a test stage	$test"
 						sleep 5
+						echo $NODE_NAME
+						echo $JOB_NAME
+						echo $BUILD_NUMBER
 					'''
 			}
 		}

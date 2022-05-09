@@ -1,5 +1,5 @@
 @Library("printuser")
-getUser "Manjunath" , "Engineer"
+getUser "Manjunath", "Engineer"
 
 pipeline {
 	agent { label "slave2" }

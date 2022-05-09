@@ -22,13 +22,14 @@ pipeline {
 				sh  '''
 						echo "STAGE 2: This is a test stage	$test"
 						sleep 5
+						echo "$branch"
 					'''
 			}
 		}
 		stage("Deploy") {
-		input {
-                message "Should we continue?"
-            }
+		when {
+				branch 'production*'
+		}
 			steps {
 				sh  '''
 						echo "STAGE 3: This is a deploy stage $test"

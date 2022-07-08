@@ -1,5 +1,5 @@
 pipeline {
-	agent { label "slave2" }
+	agent any
 	
 	environment {
 		branch = "production"

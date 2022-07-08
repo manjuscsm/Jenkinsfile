@@ -1,9 +1,6 @@
 pipeline {
 	agent { label "slave2" }
-	libraries {
-		lib('printuser@main')
-	}	
-
+	
 	environment {
 		branch = "production"
 	}
